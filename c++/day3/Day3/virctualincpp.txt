@@ -1,0 +1,31 @@
+//virctual in cpp example
+
+#include<iostream>
+#include<string>
+using namespace std;
+class person{
+	public:
+	int id;
+	string name;
+	
+	virtual void display(){
+		cout<<"hii inside display parent";
+	}
+};
+class employee : public person{
+   public: 
+	int empId;
+	void display(){
+		cout<<"inside child";
+	}
+	
+	
+};
+int main(){
+ 
+ 
+ employee e1;
+ person *p1= &e1;
+ p1->display();	
+}
+

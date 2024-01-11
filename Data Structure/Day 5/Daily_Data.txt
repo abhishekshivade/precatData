@@ -1,0 +1,434 @@
+Data Structures
+Introduction:
+- What is data structure & its classification?
+- What is an algorithm?
+Array:
+- Searching Algorithms: Linear Search & Binary Search
+- Sorting Algorithms:
+- Selection Sort, Bubble Sort & Insertion Sort: 
+Algorithms & Implementation
+sorting Algorithms
+- Merge Sort & Quick Sort: Only Algorithms.
+- Limitations of an Array data structure
+
+Linked List:
+- Concept & Definition
+-Implementation of Singly Linear Linked List Operations: Addition &
+Deletion.
+- Concepts:
+- Singly Circular Linked List
+- Doubly Linear Linked List
+- Doubly Circular Linked List.
+- Difference between Array and Linked List
+
+Stack: LIFO/FILO
+- Concept & Definition
+- Implementation of Stack by using an array
++ Stack Application Algorithms :-
+- Conversion of infix expression into its equivalent postfix expression.
+- Conversion of infix expression into its equivalent prefix expression.
+- Conversion of prefix expression into its equivalent postfix expression.
+- Evaluation of postfix expression.
+
+
+# Queue: FIFO / LILO
+- Concept & Definition
+- Types of Queue
+- Implementation of Linear Queue & Circular Queue
+
+Non-Linear DS:-
+
+Tree terminologies 
+
+Graph terminologies
+
+
+
+int arr[5] = { 1 , 2, 3, 4,  5}
+adddress    
+int ar organises manner in data structure 1 2 3 4 5 6 
+
+all organise sequencial manner
+
+1. array //
+2. structure //
+3. stack //
+4. queue //
+
+int arr[100]={1,2,3,5,4..........100} // 100 101
+
+50 
+91  92  101 
+opration in Array :-
+
+addition 
+deletion
+searching
+sorting 
+traversal
+
+
+linked list :-
+
+
+Array :- linear ,
+         contiguos memory location,
+
+
+empid :  int
+name  :  char[]/string 
+salary : float / double
+
+structure data structure 
+100 name 435.565
+
+structure :- 
+we want to store record 100 employee
+
+64 bit complier   // 32 bit compiler
+
+struct emplyoee
+{
+    int empid; // 4 byte  // 2 bytes
+    char name[100]; // 100 byte // 100 byte
+    float salary;  // 4 byte // 2 bytes
+}
+
+sizeof stucture = sum of size of aall memebers
+sizeof stucture = 108   // 104
+
+primitive data type: int , char , float , double ,void  // builtin data type // compiler 
+
+non-primitive   :     pointer , array ,structure, union , enum, function //derived data type // don't no compiler
+
+user defined data types:
+
+typedef
+
+typedef int         //user defined // not derived data type
+typedef int bool_t   //user defined data //not derived type
+typdef struct emp // derived // user defined
+int * ptr//derived data type
+
+
+Data structure types :-
+
+1. Linear Data Structure :- // linear contigeous memory  (linear manner)
+              array
+              structure & unin
+              linked list
+              stack
+              queue
+
+2. Non-Linear // hierarchical manner //  non-linear manner
+
+                 Tree
+                 Graph
+
+
+ program = > machine
+
+int main() {
+
+      printf("Hello world");
+      return 0;         
+}
+
+algorithms ==> human-being // blue print
+
+Q.additon of 2 number?
+
+step 1 : declare the 3 number
+step 2 : input 2 numbers
+step 3 : perform addition and store inside the 3rd number
+step 4 : print the result
+
+
+pesudocode => special form of algorithm
+
+Pseudocode  => programmer
+size =5;
+
+Algorithm ArraySum(arr, size)
+{
+   sum =0;
+   for(index=1; index<=size ; index++)
+             sum = sum + arr[index];
+}
+return sum;
+
+blue print ==> implementing ==> building
+
+pesudocode ==>  programer use
+traveral
+
+sum of array element ?
+
+step 1 : declare and intially take sum 0
+step 2 : travers an array and add elements sequentially into the sum.
+step 3 : return final sum
+
+Program ==> Machine
+
+int arr[3] ={1,2,3}
+int sum=0;
+int i;
+
+for(i=0 ; i<3; i++)
+{
+    sum=sum + arr[i];
+}
+return sum;
+
+
+
+Searching Algorithms:-
+
+Linear Search :-
+ 
+Binary Search :- 
+
+Time complexity:- of an algoritm is the amount of time (computer time it need to run to completion).
+
+space complexity :- of an algorithm is amount of space ex. computer memory it need to run to complete.
+
+
+int arr[5] = {1,2,3,4,5} // 20 bytes
+
+linear search: sequentially 
+
+step 1 :- accept the number from user key
+step 2 :- start trversing of array from first element to compare value key // each element to till last element
+step 3 :- if the value found matches with our value //if true or false  retrun
+
+- Searching algo efficiency how we deside depending upon no of comparisions.
+
+
+Binary search :- array should be sorted (divide and conquer approach) 
+
+step 1 :- accept the number from user key
+step 2:- calculate mid pos by formula => mid =(rid + left)/2
+         calculate mid position ,
+left subarray => left array & right sub array mid =(left+right)/2
+
+O(1) < O(logn) < O(n) < O(n logn) < O(n2)
+
+Sorting Algorithms :-
+
+1. Selection sort :- 
+
+(n-1) + (n-2) + .....
+
+n(n-1)==> n2
+
+O(n2)
+
+
+2. Bubble Sort :- 
+
+
+O(1)
+
+3. Quick Sort :-
+
+Divide and conquer approach
+basic logic of the algorithm is partitioning
+
+step 1 :- select pivot element (leftmost or rightmost).
+
+step 2 :- pivot element ==>  left partition and right partition 
+
+step 3 :- apply partitioning on left partition as well as right partition till the size of partition is greater than 1. 
+
+
+
+4. Insertion Sort :-
+
+
+for(i = 1 ; i < SIZE ; i++)
+    {
+        j = i - 1;
+        key = arr[i]; 
+        
+        while(j>=0 && key < arr[j])
+        {
+           arr[j+1] =arr[j]; 
+           j--; 
+        } 
+        arr[j+1] = key; 
+    }  
+
+
+
+5. Merge Sort :-
+
+1. Divide and conquer approch
+2. left sub array ==> left value same and right value = mid  &&  right sub array == left = mid+1 and right value same.
+
+step 1 :- Divide and conquer approch smallest size subarry's (having size =1) 
+
+step 2 :- merge two alternative array's in sorted manner into single array. ==> if subarray contain only 1 element == > subarray is already sorted. 
+
+step 3 :- sorted temp value to assign in array.
+
+
+	Sorting Algorithm's											
+			      Best Case		Worst Case	Average Case					
+        Selection Sort	 	Ω(n2)		O(n2)		Ө(n2)					
+	Bubble sort		Ω(n)		O(n2)		Ө(n2)			         Ω   	      Ө	           O
+	Insertion Sort		Ω(n)		O(n2)		Ө(n2)					
+        Quick Sort		Ω(n log n)	O(n2)	        Ө(n log n)			do not take extra space		
+	Merge Sort		Ω(n log n)      O(n log n)	Ө(n log n)			array is ==>  static data structure ==> stack memory
+	                                                                                       linked list ==> extra space ->	dynamically --> heap memory	
+                                                                                                
+											
+                   O(1) < O(logn) < O(n) < O(n logn) < O(n2)
+
+Linked List :-
+
+1. Function (call by address or value).
+2. FAR (function Activation Records).
+3. Pointer fundamentals.
+4. Dynamic memeory allocation (malloc , realloc , calloc)  ==> dynamic pointer.
+5. Selft Referential Structure.
+
+O(1)
+
+- linked list dynamic data structure
+- addition and deletion operations easy and efficient  [ Time complexity O(1) ]
+- linked list collection similar type of data(int, double, char ,.....) 
+  address of first element stored in head retrive or travel each element .
+ 
+- on linked list data structure we can perform basic two operations:
+1. addition : to add node into the linked list 
+2. deletion : to delete node from the linked list
+
+I. addition : to add node into the linked list
+- we can add node into the linked list by three ways:
+1. add node into the linked list at last position
+2. add node into the linked list at first position
+3. add node into the linked list at specific position ( inbetween position)
+
+2. deletion : to delete node from the linked list
+- we can delete node from the linked list by three ways:
+1. delete node from the linked list at first position
+2. delete node from the linked list at last position
+3. delete node from the linked list at specific position ( inbetween position)
+
+Type of Linked list :-
+
+1. Singly Linked List :-
+ a. sinlgly Linear linked list :- addition & deletion
+
+ 1 data part
+ 2 pointer part( next )
+
+to want store an address of int variable ==>? int * 
+to want store an address of char variable ==>? char * 
+to want store an address of struct emp variable ==>? struct emp * 
+to want store an address of struct  student variable ==>? struct student * 
+
+
+II. add node into the linked list at first position (slll):
+- we can add as many as we want number of nodes into slll in O( 1 )
+Best Case : Ω( 1 )
+Worst Case : O( 1 )
+Average Case : θ( 1 ) 
+- In linked list programming -> rule
+
+make before break i.e. always creates new links first (links associated with 
+newly created node), and then only break old links.
+
+3. add node into the linked list at specific position (inbetween pos) (slll):
+- we can add as many as we want number of nodes into slll in O( n )
+
+Best Case : Ω( 1 ) => if pos == 1
+Worst Case : O( n )
+Average Case : θ( n ) 
+
+2. deletion : to delete node from the linked list
+- we can delete node from the linked list by three ways:
+1. delete node from the linked list at first position
+- we can delete node which is first pos from slll in O(1) time.
+Best Case : Ω( 1 ) => if list contains only one node
+Worst Case : O( 1 )
+Average Case : θ( 1 ) 
+
+2. delete node from the linked list at last position:
+- we can delete node which is first pos from slll in O(n) time.
+Best Case : Ω( 1 ) => if list contains only one node
+Worst Case : O( n )
+Average Case : θ( n ) 
+
+3. delete node from the linked list at specific position ( inbetween position)
+- we can delete node which is first pos from slll in O(n) time.
+Best Case : Ω( 1 ) => if pos == 1
+Worst Case : O( n ) => if pos == count_nodes( )
+Average Case : θ( n )
+
+
+Limitations of singly linear linked list :- 
+
+- we can traverse SLL in forward direction
+- addlast() & delete_last() == > Time comp. O(n)
+- any node reverse  ==> Singly circular LL
+
+ b. singly circular linked list :-
+limitations :-
+- we can traverse SCLL only in forward direction
+- prev node of any node cannot be accessed from it
+- addlast() & delete_last() == > Time comp. O(n)
+
+-- overcome limitations of SLL -> Doubly Linked List
+
+
+          O(1) < O(logn) < O(n) < O(n logn) < O(n2)
+
+
+2. Doubly LL :-
+
+ a. Doubly Linear linked list :-
+    - head always contains an address of first node if case element are not empty ==> null
+  1. data part :- primitive/non-primitive
+  2. pointer part( next ) :- address of next node
+  3. pointer part ( prev ) :- adress of its prev node
+
+  ---  next part of last node and prev node never NULL  ----
+
+ add_last() ->     O(n)
+ add_first() ->    O(1)
+ delete_first() -> O(1)
+ delete_last() ->  O(n)
+
+disadv :-addlast() & delete_last() == > Time comp. O(n)
+
+ b. Doubly circular linked list :-
+
+last node add or delete ==> Time Comp. ==> O(1)
+
+first position -> O(1)
+
+last position -> O(1)                 DS == > 8 or 9
+
+in between  --> O(n) 
+
+
+            Add Last        Add First      Add At Pos        Del First        Del Last      Del At Pos 
+SLLL         O(n)              O(1)          O(n)               O(1)             O(n)          O(n)         
+SCLL         O(n)              O(n)          O(n)               O(n)             O(n)          O(n)
+DLLL         O(n)              O(1)          O(n)               O(1)             O(n)          O(n)
+DCLL         O(1)              O(1)          O(n)               O(1)             O(1)          O(n)
+
+
+-- As addlast , addfirst , deletelast and delete first opertions on DCLL taken only O(1) time,hence DCLL is most efficient form of the linked list
+--linked list ==> DCLL
+DCLL ==> is dynamic DS and addition & deleteion opertions on LL are efficient as it take O(1) time.
+
+
+
+
+
+
+
+
+

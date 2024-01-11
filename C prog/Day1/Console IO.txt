@@ -1,0 +1,46 @@
+Console I/O functions
+ The Console Input and Output functions can be classified into two categories:
+
+Formatted console I/O functions: These functions allow the user to format the input from the keyboard and the output displayed in the desired manner.
+Unformatted console I/O functions: These functions do not allow the user this feature.
+These various formatted and unformatted console I/O functions are shown in the figure below:
+
+Formatted and unformatted functions
+
+Formatted Console Input Function: scanf()
+scanf() is the formatted console input function which reads formatted input from stdin(standard input). It can read any integer, float, character, string, etc data from the user. The syntax of using scanf() is as follows:
+
+scanf("format specifier" ,arguments address); 
+Let us consider an example: scanf(“%d”, &num);
+
+In this example, the %d is the format specifier for an integer hence, num stores an integer value. &num indicates the address of num where the value is to be stored under the variable name ‘num’.
+
+Note:- One disadvantage of scanf() when taking string inputs is that it will ignore the string that has been entered after a blank space.Thus, scanf() does not take multi-word string inputs.
+To take multi word string inuts we should use gets() method.
+
+Formatted Console Input Function: printf()
+printf() is the formatted console output function which prints the formatted output to the stdout(standard output). It can display integers, floating point values, characters, string, etc as indicated by the user. The syntax of using printf() is as follows:
+
+printf("text");
+This shall simply print “text” on the output screen. Any other textual data can be written within double quotes and displayed using printf() function. In order to print any variable value along with text we have the following format:
+
+printf("text <format specifier>",variable);
+This shall print the value of the variable in the format specified by the format specifier.
+
+For example, printf(“marks: %d”,marks); This has the format specifier as %d which stands for integer data and it shall print the marks in integer format.
+
+Note: For floating point values the format specifier is %f and it shall print 6 decimal places after the floating point. For example, 3.6 will be displayed as 3.600000. In order to limit the decimal places after the floating point, the format specifier can be written as %0.3f for 3 decimal places after the floating point.
+
+Unformatted Console I/O functions
+The unformatted console input/output functions deal with a single character or a string of characters.  Let us see how all these unformatted functions work:
+
+ Functions	Description
+getch():-This function returns the character that was typed last or was typed most recently. It does not display(echo) the character on the screen. It is present in the header file <conio.h>.
+getche():-	This function is the same as getch(). The only difference is that it echoes(displays) the most recently used character. It is also present in <conio.h>.
+getchar()	:-getchar() is a macro that works in a similar manner as getch() and also displays(echoes) the character but it needs the user to press the Enter key after the character. It is present in the header file <stdio.h>.
+ 
+putch():-	This function prints a single character on the console.
+putchar()	:-This function works in the same way as putch().
+ 
+gets():-	It takes a string input(single-word or multi-word) from the user. It terminates when the Enter key is pressed.
+puts():-	It is used to print the string to the console.

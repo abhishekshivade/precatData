@@ -1,0 +1,94 @@
+
+
+Private Mode Of Inheritance:
+
+Class B:private A{}
+
+The private members of base class A are not accessible in the derived class B:
+
+All the protected members of the base class A are treated as private members of Derived class B;
+
+All the public members of the base class A are treated as private members of Derived class B;
+
+
+
+Protected Mode Of Inheritance:
+
+Class B:protected A{}
+
+The private members of base class A are not accessible in the derived class B:
+
+All the protected members of the base class A are treated as protected members of Derived class B;
+
+All the public members of the base class A are treated as protected members of Derived class B;
+
+
+
+Public Mode Of Inheritance:
+
+Class B:pubilc A{}
+
+The private members of base class A are not accessible in the derived class B:
+
+All the protected members of the base class A are treated as protected members of Derived class B;
+
+All the public members of the base class A are treated as public members of Derived class B;
+
+Single Inheritance:
+One parentcan have only one child. And that child have only one parent.
+
+Multilevel Inheritance:
+class C:public B:public  A;
+When a class is derived from another derived class it is called as multilevel inheritance.
+
+Multiple Inheritance.
+When a class is derived from tow or more than two classes then it is called as Multiple Inheritance.
+
+Diamond Inheritance:
+A class is derived from two classes and both these classes are derived from a commn base class,then it is called as diamond inheritance.
+
+Problems of Multiple Inheritance
+class B : public A, public C { … }
+
+If multiple base classes contain a function with same name.    
+Resolve by any of the following ways:
+Use scope resultion operator - bobj.A::func() or bobj.C::func()
+Override func() in B class.
+Leads to serious problem of diamond inheritance.
+Resolve using virtual base class.
+
+
+Problem: Ambiguities in Diamond Inheritance
+Case 1: what happens when two base classes contain a function with same name?
+	For example, cSalesPerson as well as cManager class contain getName() function.
+
+Case 2 : when derived class has multiple copies of the same base class. 
+	For example, cSalesManager has multiple copies of data members of cEmployee class.
+
+
+Duplicate data member ambiguity can be resolved by declaring a virtual base class. 
+Derive cSalesPerson and cManager using virtual keyword and then derive cSalesManager from these two.
+By declaring base class as virtual, multiple copies of base class data member are not created.
+There is only one copy of common base class data members in memory and its pointer reference is there in the derived class object.
+
+The meaning of virtual keyword is overloaded.
+The virtual keyword appears in the base lists of the derived classes.
+
+class cManager: virtual public cEmployee{
+	……
+};
+class cSalesPerson: virtual public cEmployee {
+	……
+};
+	
+
+
+
+
+
+
+
+
+
+
+

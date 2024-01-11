@@ -1,0 +1,25 @@
+//simple array travers
+
+#include<iostream>
+using namespace std;
+class student{
+	public:
+	int student[5];
+	void accept(){
+		for(int i=0;i<5;i++){
+			cin>>student[i];
+		}
+	}
+	void display(){
+		for(int i=0;i<5;i++)
+		{
+			cout<<student[i]<<" ";
+		}
+	}
+};
+int main(){
+	student s1;
+	s1.accept();
+	s1.display();
+	return 0;
+}

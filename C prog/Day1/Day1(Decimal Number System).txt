@@ -1,0 +1,115 @@
+What is the Decimal Number System?
+--In the decimal number system, the numbers are represented with base 10. 
+--The way of denoting the decimal numbers with base 10 is also termed as decimal notation. 
+--This number system is widely used in computer applications. 
+--It is also called the base-10 number system which consists of 10 digits, 
+such as, 0,1,2,3,4,5,6,7,8,9. 
+--Each digit in the decimal system has a position and 
+every digit is ten times more significant than the previous digit. 
+--Suppose, 25 is a decimal number, then 2 is ten times more than 5. 
+Some examples of decimal numbers are:-
+--------------------------------------------------------------------------
+Conversion From Other Bases to Decimal Number System
+Binary to Decimal
+In this conversion, a number with base 2 is converted into number with base 10. Each binary digit here is multiplied by decreasing power of 2. Let us see one example:
+
+Example: Convert (11011)base2 to decimal number.
+Solution: Given (11011)base2 a binary number.
+
+We need to multiply each binary digit with the decreasing power of 2. 
+That is;
+
+1×_?__+1×_?__+0x_?_+1×_?_+1×__?_
+
+=?
+
+=?
+
+Therefore, (11011)base2 = (--)base10
+-----------------------------------------------------------------------
+Octal to Decimal
+In this conversion, a number with base 8 is converted into number with base 10. Each digit of octal number here is multiplied by decreasing power of 8. Let us see one example:
+
+Example: Convert 1218 into the equivalent decimal number.
+Solution: Given (121)8 is an octal number
+
+Here, we have to multiply each octal digit with the decreasing power of 8, such as;
+
+1×8^2+2×8^1+1×8^0? 
+  
+=?
+
+=?
+--------------------------------------------------------------------------
+Hexadecimal to Decimal
+In this conversion, a number with base 16 is converted into number with base 10. Each digit of hex number here is multiplied by decreasing power of 16. Let us understand with the help of an example:
+
+Example: Convert 1216 into a decimal number.
+Solution: Given 1216
+
+Multiply each digit with decreasing power of 16 
+to obtain an equivalent decimal number.
+
+1×(16)^1+2×(16)^0             123
+  
+=16+2
+
+=18
+---------------------------------------------------------------------
+Decimal Number System to Other Bases
+Decimal to Binary:-
+To convert a decimal number into an equivalent binary number 
+we have to divide the original number system by 2 until the quotient is 0,
+ when no more division is possible. 
+The remainder so obtained is counted for the required number in the order of LSB (Least significant bit) to MSB (most significant bit). 
+Let us go through the example.
+Example: Convert (26)base10 into a binary number.
+Solution: Given (26)base10 is a decimal number.
+
+Divide 26 by 2
+
+26/2 = 13 Remainder →0 (MSB)
+
+13/2 = 6 Remainder →1
+
+6/2 = 3 Remainder →0
+
+3/2 = 1 Remainder →1
+
+½ = 0 Remainder →1 (LSB)
+
+Hence, the equivalent binary number is (11010)base2
+--------------------------------------------------------------------
+Decimal to Octal
+Here the decimal number is required to be divided by 8 until the quotient is 0. Then, in the same way, 
+we count the remainder from LSB to MSB to get the equivalent octal number.
+
+Example: Convert (65)base10 into an octal number.
+Solution: Given (65)base10 is a decimal number.
+
+Divide by 8
+
+65/8 = 8 Remainder →1 (MSB)
+
+8/8 = 1 Remainder →0
+
+⅛ = 0 Remainder →1 (LSB)
+
+Hence, the equivalent octal number is (101)base8
+---------------------------------------------------------------------
+Decimal to Hexadecimal
+The given decimal number here is divided by 16 to get the equivalent hex. The division of the number continues until we get the quotient 0.
+
+Example: Convert (127)base10 to a hexadecimal number.
+Solution: Given (127)base10 is a decimal number.
+
+Divide by 16
+
+127/16 = 7 Remainder →15
+
+7/16 = 0 Remainder → 7
+
+In the hexadecimal number system, alphabet F is considered as 15.
+
+Hence, 12710 is equivalent to (7F)base16
+---------------------------------------------------------

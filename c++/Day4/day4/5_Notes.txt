@@ -1,0 +1,83 @@
+base class:Employee
+derived class Trainer
+
+Geberic Pointers:
+In is-a relationship ,a base class pointer can point to a derived object without typecasting
+
+i.e Employee *ptrEmp;
+Trainer tObj;
+ptrEmp=&tObj;//no need of type casting
+
+Base class reference can also refer to a derived object without cast;
+This is called as upCasting
+
+Derived object can be assigned to base object without any cast .
+
+tObj=(Trainer)e;//casting is required ////
+
+
+-----------------------------------------------------------------------------------
+PolyMorphism:
+Ability of different related objects to respond to the same message in different ways is called polymorphism.
+The term "Polymorphism" is the combination of "poly" + "morphs" which means many forms. It is a greek word. In object-oriented programming, we use 3 main concepts: inheritance, encapsulation, and polymorphism.
+
+Compile Time Binding And Run Time Binding.
+Binding is an association of function call to an object.
+Compile-time binding
+The binding of a member function call with an object at compile-time.
+Also called static type or early binding.
+
+Run-time binding
+The binding of the function call to an object at run time.
+Also called dynamic binding or late binding.
+Achieved using virtual functions and inheritance.
+
+
+Virtual Function
+To implement late binding, the function is declared with the keyword virtual in the base class. 
+Points to note:
+Virtual function is a member function of a class.
+Virtual functions can be redefined in the derived class as per the design of the class.
+Also considered virtual by the compiler
+It is used to tell the compiler to perform dynamic linkage or late binding on the function.
+There is a necessity to use the single pointer to refer to all the objects of the different classes. So, we create the pointer to the base class that refers to all the derived objects. But, when base class pointer contains the address of the derived class object, always executes the base class function. This issue can only be resolved by using the 'virtual' function.
+A 'virtual' is a keyword preceding the normal declaration of a function.
+When the function is made virtual, C++ determines which function is to be invoked at the runtime based on the type of the object pointed by the base class pointer.
+
+Pure Virtual Function:
+A virtual function without any executable code
+Declared by using a pure specifier (= 0) in the declaration of a virtual member function in the class declaration. 
+For example, in class cEmployee 
+virtual float computeSalary() = 0;
+A class containing at least one pure virtual function is termed as abstract class.
+
+Type Of Classes:
+Concrete class
+	A class which describes the functionality of the objects
+Abstract class 
+	A class which contains generic or common features that multiple derived classes can share.
+	Cannot be instantiated
+Pure abstract class 
+	All the member functions of a class are pure virtual functions. 
+	It is just an interface and cannot be instantiated.
+
+
+Template
+-Function template
+-class template
+
+Exception Handling
+-try
+-catch
+-throw
+Rethrow
+
+Abstract Class:
+An object of an abstract class cannot be created.
+However, pointer or reference to abstract class can be created.
+Therefore, abstract classes support run-time polymorphism.
+Pure virtual functions must be overridden in derived classes; otherwise derived classes are treated as also abstract.
+
+
+
+

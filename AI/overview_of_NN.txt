@@ -1,0 +1,312 @@
+Neural Network 
+
+Consists of layers of neurons which mimic human neurons.
+---------------------------------------------------------------
+Types of layers
+i/p layer --> 
+takes input and passes it on
+no processing at input layer
+its just a place holder
+
+hidden layer -->
+processes the input 
+every input to every neuron in the layer has weights
+user never interacts with these layers so its hidden
+
+Hidden Layer types:
+	Dense layer
+		all inputs are given to every neuron
+
+	Convolution Layer
+		take the input ( 1D, 2D, 3D ..) apply convolution kernel
+		then apply activation function on the output of the kernel
+
+	Recurrent Neural Network Layer (RNN Layer / LSTM Layer)
+		output of a neuron is given as input to the same neuron
+		inputs are processed sequentially
+
+	Flatten Layer
+		n-dim input is converted to 1 dim
+
+	Pooling Layer
+		select part of input using kernel and out of selected part get the maximum (Maxpooling layer) or mean value (Mean pooling)
+		pooling layer does downsampling
+
+	Dropout Layer
+		user given percentage of values to be droped
+		So, given percentage of input is set to zero randomly by dropout layer
+		ex. [1,1,34,0.3] ( 4 inputs) dropout % given is 0.25
+			then randomly make anyone input value zero
+
+		Application of dropout layer :: 
+			- to control overfitting in Neural networks
+			- For regularization of Neural Networks
+
+	Upsample layer (Upsampling Layer)
+		exctly opposite of pooling
+		pooling layer does downsampling
+		create new values from given values
+		Ex. [10] --> upsample it to 4 values 
+
+		Application:: in Decoder part of Auto Encoders
+
+output -->
+gives output to the user
+output can be class number ( 0 /1 /2 )
+OR one hot encoded class values
+OR regression output ( number )
+
+---------------------------------------------------------------
+Neuron -->
+neuron has two parts --> summation & activation function
+summation (X) of inputs * weights + bias
+output of summation (X) goes as input to activation function
+---------------------------------------------------------------
+What is activation function ?
+process the summation using a function
+---------------------------------------------------------------
+what are imp activation functions which can be used in NN?
+X --> summation of inputs * weights + bias
+linear  --> y=f(x) = x
+			min = -inf  max = +inf
+			graph is a line
+
+sigmoid --> y=f(x) = 1 / (1 + e^ (-x) )
+			min = 0  max = 1
+			graph is S shaped curve with 0 to 1
+			
+
+tanh (hyperbolic tangent)	 --> y=f(x) = tanh(x) = e^x - e^-x / e^x + e^-x
+			min = -1  max = +1
+			graph is S shaped curve with -1 to +1
+
+
+ReLU (Rectified Linear Unit) --> y=f(x) = max(x,0)
+			min = 0  max = +inf
+			graph is bend at 0
+
+---------------------------------------------------------------
+Loss function / Error Function / Cost Function 
+
+Loss function and error function are same
+
+NOTE :: Cost function is a normalised version of loss function to calculate loss for multiple rows at a time
+
+Binary Cross Entropy / Log Loss
+		to find loss in binary classification
+
+Categorical Cross Entropy 
+		to find loss in multi-class classification with one hot encoded output
+		Target column has one hot encoded values
+		ex. of OHE output for 3 class classification --> 100 , 010, 001
+
+Sparse Categorical Cross Entropy 
+		to find loss in multi-class classification without one hot encoded output
+		here target column will have values 0,1,2 ..
+		ex. of non OHE output for 3 class classification --> 0,1,2
+
+Regression loss functions
+	mean squared error , mean absolute error
+
+---------------------------------------------------------------
+What is back propagation ?
+	here error / loss is back propagated to update the weights and bias
+
+	while backpropagation of error we calculate derivative 
+	derivative of loss wrt to weights is calculated (dL / dw)
+	reason for finding the derivative is -->
+	derivative (dL/dw) --> it is also called as gradient
+			it represents how loss/error changes by change in weight
+			weights which affect the error more are changed more
+			weights which affect the error more have high value of derivative (dL/dw)
+			gradient / derivative means it is slope of the tangent to loss curve / error curve
+
+	So, weight update equation
+
+	W_new = W_old - lr * (dL/dw)
+
+---------------------------------------------------------------
+
+why minus in weight update equation ?
+Why we substract the gradient ? why not add gradient in weight update?
+
+	we want to update weight in reverse direction of the gradient
+	means gradient is -ve --> increase weights
+	gradient is +ve --> decrease the weights
+
+	gradient is same as --> 
+		slope of the tangent to the loss curve
+		same as derivative of loss wrt weight (dL/dw)
+
+---------------------------------------------------------------
+what is learning rate ?
+	
+	controls how fast or how slow weights are updated
+	controls how much part of loss / gradient affects the weights
+
+	min = 0 max = 1
+
+	start with small learning rate line 10^-4 ( 0.0001)
+
+	learning rate decay --> decrease the learning in each epoch
+
+	Problem with high learning rate--> 
+		quickly model overfits
+		may miss minima
+		weights may randomly increase or decrease
+		fluctuating effect on loss curve / error curve
+
+	Ideal value of learning rate
+		start with small learning rate and decay it in every epoch
+---------------------------------------------------------------
+
+Problem with high learning rate--> 
+		quickly model overfits
+		may miss minima
+		weights may randomly increase or decrease
+		fluctuating effect on loss curve / error curve
+
+---------------------------------------------------------------
+
+What is overfitting in neural networks ?
+how to detect overfitting ?
+
+	when test loss starts increasing --> ML / DL model is overfit
+	in NN we use validation loss to check overfitting
+
+	How to avoid overfit in ML ? --> 
+		ensemble learning
+		bagging --> reduces variance
+		boosting reduces both bias and variance
+
+	How to avoid overfit in NN?
+		early stopping in epochs / iterations
+
+what is early stopping in neural networks ?
+	stop the training iterations / epochs when validation loss / test loss starts increasing
+
+	stop the training when NN starts overfitting
+	Here we may end up in local minima 
+	So, in early stopping, a threshold is used which allows some increase in loss but not more than threshold
+
+---------------------------------------------------------------
+How do we decide number of epochs / iterations ?
+	 we need to tune it
+	 we observe the loss curve
+	 and use early stopping to avoid overfitting 
+
+---------------------------------------------------------------
+what is early stopping in neural networks ?
+	stop the training iterations / epochs when validation loss / test loss starts increasing
+
+	stop the training when NN starts overfitting
+
+	Here we may end up in local minima 
+	So, in early stopping a threshold is used which allows some increase in loss but not more than threshold
+
+---------------------------------------------------------------
+Why optimization algorithm  is used in NN ?
+	in loss curve there can be local minimas
+	and while learning / training, NN may just stop at local minima
+
+	local minima means loss is very less in local area but when we see complete loss curve then there can be less loss ( global minima) than the current loss value
+
+Names of optimization algorithms for NN 
+SGD (Stochastic Gradient Descent)
+	here weights are updated based on current value of gradient ( dL/dw) for every row in training data for every epoch
+
+	weight update in SGD -->
+	W_new = W_old - lr * dL/dw
+
+	problem -->
+	slow in training
+	high chances of getting stuck at local minima
+
+momentum in SGD
+
+	we take weighted average of last few gardients
+	we can fine tune the weights and number of old gradients to be used
+
+	W_new = W_old - lr * (weighted avg of last few dL/dw)
+
+	Advtg :
+	because of avg of old gradients there is momentum 
+	sudden shift of gradient is not possible here
+
+	so thats why it helps avoiding local minima
+
+	faster than RMS prop
+	faster than SGD
+
+	disadvg ::
+	slow than Adam
+	there can be oscillations / flickering effect
+
+
+RMSprop (Root Mean Squared Propagation)
+	we take exponential weighted average of last few gardients
+	so last gradient is more omp than gradient which is some time back
+	historical gradients will have less weightage and current few gradients will have more weightage
+
+	ex. gradient at time t --> vimp
+		gradient at time t-1 --> imp
+		gradient at time t-2 --> less imp
+		gradient at time t-3 --> neglected
+
+	gradient = beta * gradient(t) 
+				+ (1-beta) * gradient(t-1)
+				+ (1-beta)^2 * gradient(t-2)
+				+ (1-beta)^3 * gradient(t-3)
+				+ (1-beta)^4 * gradient(t-4) + ....
+
+	beta is between 0 to 1
+
+	advt :
+	faster than SGD
+	avoids local minima
+	avoids oscillations / flickering effect in loss curve
+
+	disadvt :
+	slow compared to momentum
+
+Adam ( Adaptive Momentum optimization Algorithm)
+
+	it combines best features of momentum & RMS prop
+	so it is fast & 
+	it avoid oscillations also
+	So, its best in current optimization algorithms
+
+	avoids local minima
+	faster than SGD, momentum & RMSprop
+
+---------------------------------------------------------------
+
+How to decide batch size ?
+	
+	when you have less RAM --> reduce the batch size
+	when data is very large --> reduce the batch size
+	when you want more weight updates --> reduce the batch size
+
+	increase batch size we want bigger data to be processes at single time
+	if more RAM avaialble --> increase batch size
+
+	batch size = 1 --> for every row for every epoch weights are updated
+			so, when batch size = 1 it is stochastic training algorithm
+
+			ex bs = 1 and adam --> stochastic adam
+			bs =1  and SGD --> stochastic gradient descent
+
+	batch size = small  --> Best choice of batch
+			called as mini batch training
+			uses moderate RAM
+
+			ex. bs = 32 and adam --> mini batch adam
+			bs = 32 and SGD --> mini batch gradient descent
+
+	batch size = all training data
+			called as batch training
+			uses HIGH RAM
+
+			ex. bs = training data size and adam --> batch adam
+			bs = training data size and SGD --> batch gradient descent
+
