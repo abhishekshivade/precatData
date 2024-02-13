@@ -1,0 +1,171 @@
+1. Which of the following statement is correct in context of inline function?                                                                                                                                                                                                                                                                1.Inline functions gets process during compile time                                                                                                       2.If we implement member function inside class then by default it is considered as inline                                              3.If function is inline we cannot separate its code in multiple files.                                                                                  4.If we want to reduce overhead to the compiler during function call then we should declare function as a inline
+Answers
+1. Only 1
+2. Both 1 and 2 are correct
+3. Both 1 and 3 are correct
+4. All 1,2,3 and 4 are correct
+2. What is  output of this program?                                                                                                                                  void fun(int=10,int=20,int=30);
+void fun(int, int);
+	
+int main()
+{
+	fun(1,2);
+	return 0;
+}
+
+void fun(int x,int y,int z)
+{
+        Cout<<endl<<x<<endl<<y<<endl<<z;
+}
+
+
+void fun(int x,int y)
+{
+	cout<<endl<<x<<endl<<y;
+}
+3. which of the following statement is correct in context of object?                                                                                 1. value stored inside object is called state of the object                                                                                            2. Property of an object which distinguishes it from all other objects is called state of the object                             3. Member function of class represent behaviour of object
+4. Which of following satements is true in context of function overloading?
+5. Which of following access specifier is used in a structure definition by default?
+6. ...........are member functions of the class,which is used to read the state of the object.
+7. #include <iostream>
+using namespace std;
+namespace na
+{
+int num1 = 10;
+}
+int main( void )
+{
+int num1 = 20;
+using namespace na;
+cout<<"Num1 : "<<num1<<endl; 
+Cout<<"Num1 :”<<na::num1<<endl;
+return 0;
+}
+8. Which of the following permits function overloading in c++?
+9. Which of the following statements is/are correct in context of class?
+
+ 1.Class is a collection of data member and member functions.
+ 2.Class is a physical entity.
+10. In C++, by default structure members are ____ and class members are _________.s
+//////////////////////////////////			
+
+///////////////////////////////
+	
+/	////	/	/	/	/	/	
+1. What is true about binary tree?
+2. The post order traversal of binary tree is DEBFCA. Find out the pre order traversal.
+Answers
+1. ABFCDE
+2. ADBFEC
+3. ABDECF
+4. ABDCEF
+3. A binary tree whose every node has either zero or two children is called
+4. Which of the following is true?
+5. A graph with all vertices having equal degree is known as a __________
+6. What is a hash table?
+7. How to represent Adjancy Matrix in graph?
+8. We can say that a subtree is left-heavy if the balance factor
+9. Which of the following is not application of graph ?
+10. If there exists a direct path/edge from every vertex to every other vertex, then such graph is called as :
+//////////////////////?///	//////////////////////	/	/	/	\
+1. Which of the following statements is correct?
+
+    1.A reference is useful, when we intend to change the values of actual arguments through the function call.
+    2.A reference is useful, when we want to save memory by preventing the ceation of large structure variable that are        being passed to the function.
+Answers
+1. Only 1 is correct.
+2. Only 2 is correct.
+3. Both 1 and 2 are correct.
+4. Both 1 and 2 are incorrect.
+2. What is output of following code?                                                                                                                                 #include<iostream>
+using namespace std;
+
+int main()
+{
+	int &p;
+	int i=5;                                                                                                                                                                                                                      cout<<”i :”<<i<<endl;
+	&p=a;                                                                                                                                                                                                                         p++;                                                                                                                                                                                                                          cout<<”i :”<<i<<endl;
+	return 0;
+}
+3. what is meaning of following statement?                                                                                                                      #include<iostream>                                                                                                                                                    using namespace std;                                                                                                                                                  int main()                                                                                                                                                                    {                                                                                                                                                                                      int &a=5;                                                                                                                                                                      cout<<a<<endl;                                                                                                                                                          return 0;                                                                                                                                                                     }
+4. Which of the following statements are incorrect related to malloc() function?
+5. How to create a dynamic array of pointers (to integers) of size 10 using new in C++?
+6. Which of the following is true about new when compared with malloc.
+1) new is an operator, malloc is a function
+2) new calls constructor, malloc doesn’t
+3) new returns appropriate pointer, malloc returns void * and pointer needs to typecast to appropriate type.
+7. Pick the correct statement about references.
+8. Which of the following is used to release the dynamically allocated memory in CPP if we allocate memory using operator?
+9. Which of the following is/are valid ways to allocate memory for an integer by dynamic memory allocation in CPP?
+10. A destructor  takes ______ arguments.
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+1. What is the index number of the last element of an array with 9 elements?
+Answers
+1. 9
+2. 8
+3. 0
+4. 1
+2. Which of the following gives the address of the first element in array?
+Answers
+1. array[0];
+2. array[1];
+3. array(2);
+4. array;
+3. If a copy constructor is not defined in a class then
+Answers
+1. Compiler itself defines one
+2. Conpiler gives Syntax Error
+3. Compiler gives Run time Error
+4. None of Above
+4. Syntax for Copy constructor is
+Answers
+1. classname (const classname &obj) {    // body of constructor }
+2. classname(){    // body of constructor }
+3. Both A and B
+4. None of above
+
+5._________ is called when a new object is created from an existing object, as a copy of the existing object
+Answers
+1. Copy Constructor
+2. Default Constructor
+3. Assignment operator
+4. None of above
+ _______ assigns the value of one object to another object both of which are already exists.
+Answers
+1. constructor
+2. Copy constructor
+3. Assignment Operator
+4. None of Above
+
+Which of the following scenario deep copies generally required?
+Answers
+1. A constructor to either make an initial allocation or set the pointer to NULL.
+2. A destructor to delete the dynamically allocated memory.
+3. A copy constructor to make a copy of the dynamically allocated memory.
+4. An overloaded assignment operator to make a copy of the dynamically allocated memory.
+5. All of above
+8. List of functions that the compiler provides by default for any class if it is not available in that class.
+  I. default parameter less constructor
+  II. default destructor
+  III. default copy constructor
+  IV. default assignment operator function
+Answers
+1. I, II and III
+2. I, II, III and IV
+3. I, III and IV
+4. II, III and IV
+
+9. copy constructor is a member function of a class which gets called implicitly.
+Answers
+1. when we pass an object to the function by value.
+2. when we return an object from function by value.
+3. when we assign an already created object to the newly created object.
+4. All of the above
+
+10. What is shallow copy?
+Answers
+1. A shallow copy creates a copy of the dynamically allocated objects too.
+2. A shallow copy just copies the values of the data as they are.
+3. A shallow copy creates a copy of the statically allocated objects too
+4. A shallow copy is used to rename object.
