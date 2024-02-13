@@ -1,0 +1,50 @@
+1. what is wrong about singly linked list?
+2. What would be the asymptotic time complexity to add a node at the end of singly linked list, if the pointer is initially pointing to the head of the list?
+3. which statement is True about circular linked list?
+4. Which of the following is false about a doubly linked list?
+5. Which of the following operations is performed more efficiently by doubly linked list than by singly linked list?
+6. What is the output of the following code for start pointing to first node of the given list? 1->2->3->4->5->6
+ void Linkedlist(struct node* start)
+{
+if(start == NULL)
+       return;
+printf("%d",start->data);
+
+if(start->next != NULL)
+  Linkedlist(start->next->next);
+printf("%d",start->data);
+}
+7. consider following implementation is for the unsorted doubly linked list. And consider with only head pointer. Time complexity of the which given implementation is o(1)?
+8. Below one is add_first() functionality code for empty Doubly CircularLinked list. Find the correct statement to replace ????
+	head = newnode;
+	tail = newnode;
+	tail ->next = head;
+	????
+9. A linked List where there are no NULL links is :
+10. What is the worst case time complexity to search an element from a singly linked list of length n.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+1. _____ operation get the top data element of the stack, without removing it.
+2. Which of the following is a non-linear data structure?
+3. _______ can be used to test a palindrome?
+4. If a user tries to remove an element from empty stack condition arises it is called _________.
+5. When a resource is shared among multiple consumers which of the following data structure can be used to avoid confusion?
+6. Circular queue is also known as
+7. Real Time Application of Queue:
+8. Suppose a circular queue is implemented with an array of n elements. Assume that the insertion and deletion operations are carried out using REAR and FRONT as array index variables, respectively. Initially, REAR = FRONT = -1. The conditions to detect queue full and empty are :
+9. What will be the sequence of the output if we run the following operations on stack.
+	1. push(11)
+	2. push(22)
+	3. push(33)
+	4.pop()
+	5.push(11)
+	6.pop()
+	7.push(33)
+	8.pop()
+	9.pop()
+	10.pop()
+10. Evaluate the following postfix expression : 10 5 + 60 6 / * 8 -
+Answers
+1. 284
+2. 142
+3. 213
+4. 71

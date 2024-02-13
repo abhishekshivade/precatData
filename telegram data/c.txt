@@ -1,0 +1,111 @@
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+    char str1[20] = "Sunbeam", str2[20] = " Pune";
+    printf("%sn", strcpy(str2, strcat(str1, 1+str2)));
+}
+
+
+2. Find the output of the following:
+
+void funarr(float *f,double *d)
+{
+    printf("%u %u %u %u \n",sizeof(f),sizeof(d),sizeof(*f),sizeof(*d));
+}
+int main()
+{
+    float arr[] = {6.0f,4.0f,2.0f};
+    funarr(arr,arr);
+}
+
+
+3. #include<stdio.h>
+int main()
+{
+	int i;
+	int arr[5]={1,2,3,4,5};
+	*arr+=*(arr+3)-2[arr];
+	for (i = 0; i < 5; ++i)
+	{
+		printf("\t%d,",arr[i]);
+	}
+}
+4. What will be the output of this code?
+#include<stdio.h>
+int main(void)
+{
+char arr[4]={1, 1, 0, 0};
+printf("%d", *(int *)arr);
+return 0;
+}
+5. Find the output of the following:
+
+void reverse(int *arr)
+{
+    int i=0,j=4;
+    for( ; i<j;i++,j--)
+    {
+        arr[i] = arr[i] + arr[j];
+        arr[j] = arr[i] - arr[j];
+        arr[i] = arr[i] - arr[j];
+    }
+}
+int main()
+{
+    int arr[5]={11,22,33};
+    reverse(arr);
+    printf("%4d %4d %4d %4d %4d",arr[0],arr[1],arr[2],arr[3],arr[4]);
+}
+6. An array elements are always stored in _________ memory locations.
+7. Find the output of the following:
+#include<string.h>
+void convert(char *s)
+{
+    int i=0;
+    while(*s++,i<strlen(s))
+    {
+        *s+=32;
+        s++;
+        i++;
+    }
+}
+int main()
+{
+    char carr[10]={68,65,67,0};
+    convert(carr);
+    printf("%s",carr);
+}
+8. #include <stdio.h>
+int main(void)
+{
+int arr1[] = {1,2,3,4,5};
+int arr2[] = {1,2,3,4,5};
+if(arr1==arr2)
+	printf("Same");
+else
+	printf("Not same");
+}
+9. What will be the output of this code?
+#include<stdio.h>
+#include<string.h>
+int main(void)
+{
+	char *str1 = "Sunbeam";
+	char *str2= "Sunbeam";
+	if ( str1 == str2 )
+                  printf("\n Strings Are Equal");
+	else
+		printf("\n Strings Are Not Equal");
+	return 0;
+}
+10. Output of given snippet?
+#include<stdio.h>
+int main()
+{
+char *p = "pune";
+int i;
+++p;
+for(i=0; p[i]; i++)
+printf("%c%c", *(i+p), i[p]);
+}

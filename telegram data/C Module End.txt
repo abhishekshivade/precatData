@@ -1,0 +1,247 @@
+1. What will be the o/p of the following code?
+#include<stdio.h>
+void display(int **pp);
+int main(void)
+{
+int arr[3][4]={{1,2,3,4},{4,3,2,8},{7,8,9,0}};
+int *ptr=NULL;
+ptr = &arr[0][1];
+ptr++;
+display(&ptr);
+return 0;
+}
+void display(int **pp)
+{
+printf("%d", **pp);
+return;
+}
+2. What will be the o/p of the following statment 
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+
+	int a=10;
+	int b=20;
+
+	if(a==100)
+	if(b==20)
+	printf("Match 1");
+	else
+	printf("Match 2");
+}
+3. What will be the o/p of the following code?
+#include<stdio.h>
+int show(int num1 , int num2);
+static int result;
+int main()
+{
+	int ans;
+	int num1 =  1;
+	int num2 =  2;
+	ans = show(num1,num2);
+	printf("%d %d",ans,result++);
+}
+int show(int num1 , int num2)
+{
+	int result;
+	result = num1 + num2;
+	return num2++,result;
+}
+Answers
+1. 3 3
+2. 3 0
+3. 2 0
+4. 3 1
+4. What will be the o/p of the following code?
+#include <stdio.h>
+int num=5;
+void fun(void);
+int main(void)
+{
+	int num=3;
+
+	for (fun(); ++num<5; fun())
+	{
+		fun();
+	}
+}
+void fun(void)
+{
+	printf("%d",++num);
+}
+5. What will be the o/p of the following code
+#include<stdio.h>
+void show(void);
+int main(void)
+{
+	int i;
+	for (i = 0;i<=5; ++i)
+	{
+		if(i==5)
+			goto display;
+		printf("%d",i++);
+	}
+}
+void show(void)
+{
+	display:
+	printf("Hello");
+}
+6. What will be the o/p of the following code?
+#include <stdio.h>
+int main(void)
+{
+ int a[5] = {45, 1, 7, 10, 35};
+ int x, y, z;
+ x = ++a[1];
+ y = a[1]++;
+ z = a[x++];
+ printf("%d, %d, %d", x, y, z);
+ return 0;
+}
+7. What will be the o/p of the following code
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int result=0;
+	result = printf(" ");
+	switch (result)
+	{
+		case 0:
+			printf("Hello 0 ");
+			break;
+		case 1:
+			printf("Hello 1 ");
+			break;
+		default:
+			printf("Default case");
+			break;
+	}
+}
+8. What will be the o/p of the following code
+#include<stdio.h>
+struct bit
+{
+	unsigned int a:3;
+	int b:3;
+};
+int main()
+{
+	struct bit b1;
+	b1.a=10;
+	b1.b=5;
+	printf("%d",b1.a);
+	printf("%d",b1.b);
+}
+9. 1.Conventional method to store raw address in C programming which of the following is used
+10. What will be the o/p of the following code
+#include<stdio.h>
+#define EXECUTE(x,y) x##y
+int main()
+{
+	int a = 200,b=300,ab=400;
+	printf("%d",ab+EXECUTE(a,b));
+	return 0;
+}
+11. What will be the o/p of the following code
+
+#include<stdio.h>
+void recFun(int num);
+int main()
+{
+	int num=3;
+	recFun(num);
+}
+void recFun(int num)
+{
+	if(num>=0)
+	{
+		recFun(--num);
+		printf("%d",num);
+	}
+}
+12. What will be the o/p of the following code
+#include<stdio.h>
+int main()
+{
+int i;
+for (i = 0; i < 3; )
+{
+	i++;
+}
+if(i==3)
+{
+    break;
+	printf("Hello");
+}
+ printf("World");
+ return 0;
+}
+13. What will be the o/p of the following code
+#include<stdio.h>
+int main()
+{
+	int result;
+	char name[10]="Sun\0beam";
+	result = strlen(name);
+	printf("%d",result++);
+}
+14. What is constant in the following snippet
+  int * const ptr;
+15. Which of the following can be considered as pure declaration?
+I int number;
+II int number=5;
+III extern int number;
+IV extern int number=5;
+16. What will be the o/p of the following program 
+#include<stdio>
+int main()
+{
+	int num1=0;
+	int num2=2;
+	int result;
+	result = ++num1 && num2-- && --num1 || ++num2 ;
+	printf("%d %d %d",num1,num2,result);
+}
+17. What will be the o/p of the following code
+#include<stdio.h>
+int main()
+{
+	int num=10;
+	int * const ptr = NULL;
+	ptr=&num;
+	printf("%d",*ptr);
+	printf("%d",num);
+}
+18. What will be the o/p of the following program 
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int a=11;
+	if(a>10)
+		printf("Value of a is %d ",a);
+		printf("Value is greater than 10");
+	else
+		printf("Value is less than 10");
+        printf("Outside the if statement");
+}
+19. #include<stdio.h>
+int main()
+{
+    if(~printf("sunbeam "))
+    printf(" Pune");
+    else
+    printf("Karad");
+}
+20. #include<stdio.h>
+#include<string.h>
+int main()
+{
+char *str[] = {"DAC", "DMC", "DBDA", "DESD", "DITTIS", "PRECAT"};
+printf("%d, %d, %d", sizeof(str), strlen(str[5]),sizeof(str[5]));
+return 0;
+}
